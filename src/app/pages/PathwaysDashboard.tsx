@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { LogOut, ChevronRight } from 'lucide-react';
 import lightbulbImage from 'figma:asset/70cb064858c6afd18dd53d1899148bc083455fe5.png';
 import finetuneCatalogIcon from 'figma:asset/b2591cbfad517e6b3938045bc039afff1f28f360.png';
@@ -10,7 +10,7 @@ interface Product {
   id: string;
   name: string;
   description: string;
-  icon: JSX.Element;
+  icon: React.JSX.Element;
   color: string;
   available: boolean;
   hasAccess: boolean;

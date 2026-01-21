@@ -1,7 +1,7 @@
 import React from 'react';
 
 interface BadgeProps {
-  label: string;
+  label?: string;
   color: string;
   variant?: 'solid' | 'outline' | 'subtle';
   size?: 'sm' | 'md' | 'lg';
@@ -44,7 +44,7 @@ export function Badge({
       className={`font-['Rubik:Medium',sans-serif] rounded-[4px] whitespace-nowrap inline-block ${sizeStyles[size]} ${className}`}
       style={variantStyles[variant]}
     >
-      {label}
+      {label || ''}
     </span>
   );
 }

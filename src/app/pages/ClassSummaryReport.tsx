@@ -632,14 +632,14 @@ export function ClassSummaryReport() {
                       borderRadius: '4px',
                       fontSize: '14px'
                     }}
-                    formatter={(value: number, name: string, props: any) => {
+                    formatter={(value: number | undefined, name: string | undefined, props: any) => {
                       return [`${props.payload.count} students (${props.payload.percentage}%)`, 'Count'];
                     }}
                   />
                   <Bar 
                     dataKey="count" 
                     radius={[4, 4, 0, 0]}
-                    onClick={(data) => {
+                    onClick={(data: any) => {
                       setExpandedScoreRange(expandedScoreRange === data.range ? null : data.range);
                     }}
                     cursor="pointer"
@@ -831,11 +831,11 @@ export function ClassSummaryReport() {
               <tbody>
                 {standards.flatMap((standard) => {
                   const isExpanded = expandedStandards.has(standard.id);
-                  const rows: JSX.Element[] = [
+                  const rows: React.JSX.Element[] = [
                     <tr key={standard.id} className="border-b border-[#e0e0e0] hover:bg-[#f7f7f7] shadow-[0_1px_3px_rgba(0,0,0,0.12)]">
                       <td className="px-[16px] sm:px-[24px] py-[18px] align-middle">
                         {standard.subStandards && standard.subStandards.length > 0 && (
-                          <button
+                          <button title="Expand/Collapse Sub-Standards"
                             onClick={() => toggleStandard(standard.id)}
                             className="size-[24px] flex items-center justify-center text-[#707070] hover:text-[#343A6F]"
                           >

@@ -130,7 +130,6 @@ export function Reports() {
                         outerRadius={140}
                         fill="#8884d8"
                         dataKey="value"
-                        activeIndex={activeIndex ?? undefined}
                         activeShape={renderActiveShape}
                         onMouseEnter={onPieEnter}
                         onMouseLeave={onPieLeave}

@@ -19,7 +19,7 @@ export interface Assessment {
 export interface Student {
   id: string;
   firstName: string;
-  lastName: 'Smith';
+  lastName: string;
   grade: string;
   classId: string;
   assessments: {
